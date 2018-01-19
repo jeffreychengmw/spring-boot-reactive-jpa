@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.jeffreycheng</groupId>
-	<artifactId>springboot-reactive</artifactId>
+	<artifactId>spring-boot-reactive-ch1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
