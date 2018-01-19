@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
+import reactor.core.publisher.Flux;
 
 @Component
 public class SampleDataPopulator implements CommandLineRunner
@@ -23,14 +22,22 @@ public class SampleDataPopulator implements CommandLineRunner
 
     }
 
-    private List<User> sampleUsers()
+    private Flux<User> sampleUsers()
     {
-        return Arrays.asList(
+    	return Flux.just(
+			new User("uid1", "Admin",  "admin@gmail.com"),
+            new User("uid2", "Siva",  "siva@gmail.com"),
+            new User("uid3", "Bernard",  "bernard@gmail.com"),
+            new User("uid4", "John",  "john@gmail.com"),
+            new User("uid5", "Mike",  "mike@gmail.com")
+		);
+    	
+    	/*return Arrays.asList(
                 new User("uid1", "Admin",  "admin@gmail.com"),
                 new User("uid2", "Siva",  "siva@gmail.com"),
                 new User("uid3", "Bernard",  "bernard@gmail.com"),
                 new User("uid4", "John",  "john@gmail.com"),
                 new User("uid5", "Mike",  "mike@gmail.com")
-        );
+        );*/
     }
 }
