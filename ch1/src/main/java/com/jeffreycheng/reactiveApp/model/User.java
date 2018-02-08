@@ -1,12 +1,9 @@
-package com.jeffreycheng.reactiveApp;
+package com.jeffreycheng.reactiveApp.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
-
 @Document
-@Data
 public class User {
     @Id
     private String id;
@@ -42,4 +39,11 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + "]";
+	}
+    
+    
 }
